@@ -1,155 +1,155 @@
-# Task Management System in Microsoft 365
+# System Zarządzania Zadaniami w Microsoft 365
 
-## Step 1: Set Up Microsoft Planner
-
-1. **
-Create a Plan:
-**
-   - Open Microsoft Planner and create a new plan.
-   - Name the plan, for example, "Daily Task Schedule".
-   - Create buckets for each time slot, such as "8am-11am Client Calls", "11am-1pm Order Management", etc.
-
-2. **
-Add Tasks:
-**
-   - Within each bucket, add tasks for the specific activities.
-   - Assign tasks to the respective team members.
-   - Set due dates for each task, ensuring they coincide with the daily schedule.
-
-## Step 2: Set Up Microsoft To Do
+## Krok 1: Konfiguracja Microsoft Planner
 
 1. **
-Create a Shared List:
+Utwórz Plan:
 **
-   - Open Microsoft To Do and create a new list called "Daily Tasks".
-   - Add tasks similar to the ones you created in Planner with specific time slots.
-   - Share this list with all team members, so they can mark tasks as complete.
+   - Otwórz Microsoft Planner i utwórz nowy plan.
+   - Nazwij plan, np. "Codzienny Harmonogram Zadań".
+   - Utwórz segmenty (buckets) dla każdego przedziału czasowego, np. "8:00-11:00 Połączenia z Klientami", "11:00-13:00 Zarządzanie Zamówieniami", itp.
 
 2. **
-Assign and Schedule Tasks in To Do:
+Dodaj Zadania:
 **
-   - For each task, set reminders for the specific times.
-   - Though tasks cannot be assigned to multiple people directly in To Do, detail responsibilities in the task descriptions or use subtasks.
+   - W każdym segmencie dodaj odpowiednie zadania.
+   - Przypisz zadania odpowiednim członkom zespołu.
+   - Ustaw daty końcowe (terminy) dla każdego zadania, aby były zgodne z dziennym harmonogramem.
 
-## Step 3: Automate with Power Automate
-
-### Automate Task Creation
+## Krok 2: Konfiguracja Microsoft To Do
 
 1. **
-Log into Power Automate:
+Utwórz Udostępnioną Listę:
 **
-   - Open Power Automate from your Microsoft 365 account.
+   - Otwórz Microsoft To Do i utwórz nową listę o nazwie "Codzienne Zadania".
+   - Dodaj zadania podobne do tych, które utworzyłeś w Planner z konkretnymi przedziałami czasowymi.
+   - Udostępnij tę listę wszystkim członkom zespołu, aby mogli oznaczać zadania jako ukończone.
 
 2. **
-Create a New Flow:
+Przypisz i Zaplanuj Zadania w To Do:
 **
-   - Start a new automated flow.
+   - Dla każdego zadania ustaw powiadomienia na konkretne godziny.
+   - Choć nie możesz przypisać zadań do wielu osób bezpośrednio w To Do, opisz odpowiedzialności w opisie zadania lub użyj podzadań.
+
+## Krok 3: Automatyzacja za pomocą Power Automate
+
+### Automatyzacja Tworzenia Zadań
+
+1. **
+Zaloguj się do Power Automate:
+**
+   - Otwórz Power Automate ze swojego konta Microsoft 365.
+
+2. **
+Utwórz Nowy Przepływ (Flow):
+**
+   - Rozpocznij nowy zautomatyzowany przepływ.
 
 3. **
-Trigger:
+Wyzwalacz (Trigger):
 **
-   - Use a recurrence trigger to set the flow to run daily at a specific time.
+   - Użyj wyzwalacza cyklicznego (recurrence), aby ustawić przepływ na codzienne uruchamianie o określonej godzinie.
 
 4. **
-Planner Actions:
+Akcje w Planner:
 **
    1. **
-Add Tasks to Planner:
+Dodaj Zadania do Planner:
 **
-      - Add an action to "Create task" in Microsoft Planner.
-      - Define the Plan ID and Bucket ID. Set the task title and assign the tasks dynamically if possible.
+      - Dodaj akcję "Utwórz zadanie" (Create task) w Microsoft Planner.
+      - Określ ID planu i ID bucket. Ustaw tytuł zadania i przypisz zadania dynamicznie, jeśli to możliwe.
 
 5. **
-To Do Actions:
+Akcje w To Do:
 **
    1. **
-Create Tasks in To Do:
+Utwórz Zadania w To Do:
 **
-      - Add an action to "Create task" in Microsoft To Do for each team member.
+      - Dodaj akcję "Utwórz zadanie" (Create task) w Microsoft To Do dla każdego członka zespołu.
 
-### Track Task Completion
+### Śledzenie Ukończenia Zadań
 
 1. **
-Trigger:
+Wyzwalacz:
 **
-   - Set up another flow with a recurrence trigger to check tasks' status.
+   - Ustaw inny przepływ z wyzwalaczem cyklicznym, aby sprawdzać status zadań.
 
 2. **
-List Tasks in Planner:
+Wymień Zadania w Planner:
 **
-   - Add an action to "List tasks" from the specific Planner.
+   - Dodaj akcję "Wymień zadania" (List tasks) z określonego planu.
 
 3. **
-Check Task Status:
+Sprawdź Status Zadań:
 **
-   - Use conditions to check if tasks are completed.
-   - Notify you or update a document/spreadsheet if tasks are pending or completed.
+   - Użyj warunków (conditions), aby sprawdzić, czy zadania są ukończone.
+   - Powiadomienie lub aktualizacja dokumentu/arkusza, jeśli zadania są nieukończone lub ukończone.
 
-## Practical Example with Power Automate
+## Praktyczny Przykład w Power Automate
 
-### Create Daily Tasks in Planner
+### Utwórz Codzienne Zadania w Planner
 
 1. **
-Start an Automated Flow:
+Rozpocznij Zautomatyzowany Przepływ:
 **
-   - Trigger: Recurrence (daily at 7 AM).
+   - Wyzwalacz: Cykliczny (codziennie o 7:00).
 
 2. **
-Create Task in Microsoft Planner:
+Utwórz Zadanie w Microsoft Planner:
 **
-   - Action: "Create a task".
-   - Plan ID: [Select your plan]
-   - Bucket ID: [Select appropriate bucket]
-   - Title: "Client Calls"
-   - Due Date: Today
-   - Assign To: [Dynamic content or predefined users]
+   - Akcja: "Utwórz zadanie".
+   - Plan ID: [Wybierz swój plan]
+   - Bucket ID: [Wybierz odpowiedni bucket]
+   - Tytuł: "Połączenia z Klientami"
+   - Data końcowa: Dzisiaj
+   - Przypisz do: [Treść dynamiczna lub zdefiniowani użytkownicy]
 
-### Sync Tasks to To Do
+### Sync Zadania z To Do
 
 1. **
-Create Task in Microsoft To Do:
+Utwórz Zadanie w Microsoft To Do:
 **
-   - Action: "Create a task".
-   - Title: "Client Calls"
-   - Due Date: Today
-   - Reminder Time: 8:00 AM
+   - Akcja: "Utwórz zadanie".
+   - Tytuł: "Połączenia z Klientami"
+   - Data końcowa: Dzisiaj
+   - Godzina przypomnienia: 8:00 AM
 
-### Track Task Completion
+### Śledzenie Ukończenia Zadań
 
 1. **
-Trigger at End of Day:
+Wyzwalacz na Koniec Dnia:
 **
-   - Recurrence set for the end of the workday.
+   - Wyzwalacz cykliczny ustawiony na koniec dnia pracy.
 
 2. **
-List Tasks in Planner:
+Wymień Zadania w Planner:
 **
-   - Action: "List tasks" in the Plan.
+   - Akcja: "Wymień zadania" w Planie.
 
 3. **
-Condition to Check Status:
+Warunek do Sprawdzania Statusu:
 **
-   - If Task Status is not Completed:
-     - Action: Send notification to you/manager.
+   - Jeżeli Status Zadania jest inny niż Ukończone:
+     - Akcja: Wyślij powiadomienie do ciebie/managera.
 
-## Summary
+## Podsumowanie
 
-Using Microsoft Planner, Microsoft To Do, and Power Automate:
+Wykorzystując Microsoft Planner, Microsoft To Do i Power Automate:
 - **
 Planner
-**: Create and assign tasks in specific time slots with visibility for all team members.
+**: Tworzenie i przypisywanie zadań w określonych przedziałach czasowych z widocznością dla wszystkich członków zespołu.
 - **
 To Do
-**: Share daily task lists and manage individual progress with timely reminders.
+**: Udostępnianie codziennych list zadań i zarządzanie indywidualnym postępem z powiadomieniami na czas.
 - **
 Power Automate
-**: Automate the creation of daily tasks and sync between Planner and To Do, ensuring you can track and receive notifications about task completion.
+**: Automatyzacja tworzenia codziennych zadań i synchronizacja między Planner i To Do, zapewniając możliwość śledzenia i otrzymywania powiadomień o ukończeniu zadań.
 
-## Additional Resources
+## Dodatkowe Zasoby
 
 - **
-Microsoft Documentation
-**: Visit Microsoft’s guides for detailed instructions on Power Automate, Planner, and To Do.
+Dokumentacja Microsoft
+**: Odwiedź przewodniki Microsoft dotyczące szczegółowych instrukcji na temat Power Automate, Planner, i To Do.
 - **
-Templates & Tutorials
-**: Explore templates in Power Automate for task management automation.
+Szablony & Samouczki
+**: Przeglądaj szablony w Power Automate do automatyzacji zarządzania zadaniami.
