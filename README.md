@@ -1,124 +1,41 @@
-# System Zarządzania Zadaniami w Microsoft 365 
-## Krok 1: Konfiguracja Microsoft Planner
+# Projekt Aplikacji Power Apps -- TiSP
 
-  #### 1. Utwórz Plan:
+## Narzędzia
+1. **Power Apps**: Do stworzenia aplikacji.
+2. **Microsoft Power Automate**: Do automatyzacji przepływów pracy.
+3. **Microsoft To-Do**: Do zarządzania indywidualnymi zadaniami pracowników.
+4. **Microsoft Teams**: Do komunikacji, współpracy i importu danych personalnych.
+5. **Excel/CSV**: Do ręcznego importu danych personalnych z Teta.me i Tidaro.
 
-  - Otwórz Microsoft Planner i utwórz nowy plan.
-  - Nazwij plan, np. "Codzienny Harmonogram Zadań".
-  - Utwórz segmenty (buckets) dla każdego przedziału czasowego, np. "8:00-11:00 Połączenia z Klientami", "11:00-13:00 Zarządzanie Zamówieniami", itp.
+## Przepływ pracy
+1. **Import danych**:
+   - **Teams**: Import danych personalnych z zespołów w Teams.
+   - **Excel/CSV**: Ręczny import danych personalnych z Teta.me i Tidaro.
+2. **Tworzenie zadań**:
+   - Team Leader tworzy zadania w aplikacji Power Apps, określając czas trwania, minimalną i maksymalną liczbę osób oraz wymagania dotyczące lokalizacji.
+   - Zadania mogą być oznaczane metkami lub hashtagami (np. "telefonista", "piszący maile", "dobry negocjator").
+3. **Przypisywanie zadań**:
+   - Ręczne przypisywanie zadań na zasadzie matrycy: oś X to sloty czasowe, oś Y to nazwiska członków zespołu.
+   - Możliwość włączenia lub wyłączenia danej osoby do danego zadania w danym czasie.
+   - Podsumowania w każdej kolumnie (ilość osób przypisanych do zadania) i w każdym wierszu (ilość przypisanych godzin w ciągu dnia).
+   - Zadania w danych przedziałach czasowych mogą się różnić, np. między 8:00 a 10:00 mogą być do wyboru trzy zadania.
+   - Nie można przypisać danej osoby do wielu zadań w tym samym czasie.
+4. **Synchronizacja z To-Do**:
+   - Codziennie o 7 rano zadania są synchronizowane z Microsoft To-Do każdego pracownika.
+5. **Monitorowanie postępów**:
+   - Pracownicy odhaczają zakończone zadania w To-Do.
+   - Aplikacja monitoruje postępy i generuje raporty dla Team Leaderów.
+6. **Feedback**:
+   - Team Leader otrzymuje informację zwrotną, jeśli plan nie zadziałał lub pracownik pominął zadanie.
 
-   #### 2. Dodaj Zadania:
+## Interfejs aplikacji
+1. **Ekran główny**: Przegląd zadań na dany dzień, z możliwością filtrowania według zespołu, lokalizacji i statusu zadania.
+2. **Tworzenie zadania**: Formularz do tworzenia nowych zadań z polami na nazwę zadania, opis, czas trwania, minimalną i maksymalną liczbę osób oraz wymagania dotyczące lokalizacji.
+3. **Przypisywanie zadań**: Widok matrycy z możliwością przypisywania zadań do pracowników, uwzględniający ich dostępność i lokalizację.
+4. **Raporty**: Sekcja z raportami o postępach zespołu, z możliwością generowania raportów dziennych, tygodniowych i miesięcznych.
 
-  - W każdym segmencie dodaj odpowiednie zadania.
-  - Przypisz zadania odpowiednim członkom zespołu.
-  - Ustaw daty końcowe (terminy) dla każdego zadania, aby były zgodne z dziennym harmonogramem.
-
-## Krok 2: Konfiguracja Microsoft To Do
-
-  #### 1. Utwórz Udostępnioną Listę:
-
-  - Otwórz Microsoft To Do i utwórz nową listę o nazwie "Codzienne Zadania".
-  - Dodaj zadania podobne do tych, które utworzyłeś w Planner z konkretnymi przedziałami czasowymi.
-  - Udostępnij tę listę wszystkim członkom zespołu, aby mogli oznaczać zadania jako ukończone.
-
-  #### 2. Przypisz i Zaplanuj Zadania w To Do:
-
-  - Dla każdego zadania ustaw powiadomienia na konkretne godziny.
-  - Choć nie możesz przypisać zadań do wielu osób bezpośrednio w To Do, opisz odpowiedzialności w opisie zadania lub użyj podzadań.
-
-  ## Krok 3: Automatyzacja za pomocą Power Automate
-
-  #### Automatyzacja Tworzenia Zadań
-
-  #### 1. Zaloguj się do Power Automate:
-
-  - Otwórz Power Automate ze swojego konta Microsoft 365.
-
-  #### 2. Utwórz Nowy Przepływ (Flow):
-
-  - Rozpocznij nowy zautomatyzowany przepływ.
-
-  #### 3. Wyzwalacz (Trigger):
-
-  - Użyj wyzwalacza cyklicznego (recurrence), aby ustawić przepływ na codzienne uruchamianie o określonej godzinie.
-
-  #### 4. Akcje w Planner:
-
-   #### Dodaj Zadania do Planner:
-  - Dodaj akcję "Utwórz zadanie" (Create task) w Microsoft Planner.
-  - Określ ID planu i ID bucket. Ustaw tytuł zadania i przypisz zadania dynamicznie, jeśli to możliwe.
-
-  #### 5. Akcje w To Do:
-
-  #### Utwórz Zadania w To Do:
-
-  - Dodaj akcję "Utwórz zadanie" (Create task) w Microsoft To Do dla każdego członka zespołu.
-
-  #### Śledzenie Ukończenia Zadań
-
-  #### 1. Wyzwalacz:
-
-  - Ustaw inny przepływ z wyzwalaczem cyklicznym, aby sprawdzać status zadań.
-
-  #### 2. Wymień Zadania w Planner:
-
-  - Dodaj akcję "Wymień zadania" (List tasks) z określonego planu.
-
-  #### 3. Sprawdź Status Zadań:
-
-  - Użyj warunków (conditions), aby sprawdzić, czy zadania są ukończone.
-  - Powiadomienie lub aktualizacja dokumentu/arkusza, jeśli zadania są nieukończone lub ukończone.
-
-## Praktyczny Przykład w Power Automate
-
-  #### **Utwórz Codzienne Zadania w Planner**
-
-  #### 1. Rozpocznij Zautomatyzowany Przepływ:
-  
-  - Wyzwalacz: Cykliczny (codziennie o 7:00).
-
-    #### 2. Utwórz Zadanie w Microsoft Planner:
-
-  - Akcja: "Utwórz zadanie".
-  - Plan ID: [Wybierz swój plan]
-  - Bucket ID: [Wybierz odpowiedni bucket]
-  - Tytuł: "Połączenia z Klientami"
-  - Data końcowa: Dzisiaj
-  - Przypisz do: [Treść dynamiczna lub zdefiniowani użytkownicy]
-
-  ### Sync Zadania z To Do
-
-   #### 1. Utwórz Zadanie w Microsoft To Do:
-
-  - Akcja: "Utwórz zadanie".
-  - Tytuł: "Połączenia z Klientami"
-  - Data końcowa: Dzisiaj
-  - Godzina przypomnienia: 8:00 AM
-
-  ### Śledzenie Ukończenia Zadań
-
-  #### 1. Wyzwalacz na Koniec Dnia:
-
-  - Wyzwalacz cykliczny ustawiony na koniec dnia pracy.
-
-  #### 2. Wymień Zadania w Planner:
-
-  - **Akcja: "Wymień zadania" w Planie.**
-
-  #### 3. Warunek do Sprawdzania Statusu:
-
-  - Jeżeli Status Zadania jest inny niż Ukończone:
-    
-    **Akcja: Wyślij powiadomienie do ciebie/managera.**
-
-## Podsumowanie
-
-### Wykorzystując Microsoft Planner, Microsoft To Do i Power Automate:
-- Planner : Tworzenie i przypisywanie zadań w określonych przedziałach czasowych z widocznością dla wszystkich członków zespołu.
-- To Do : Udostępnianie codziennych list zadań i zarządzanie indywidualnym postępem z powiadomieniami na czas.
-- Power Automate : Automatyzacja tworzenia codziennych zadań i synchronizacja między Planner i To Do, zapewniając możliwość śledzenia i otrzymywania powiadomień o ukończeniu zadań.
-
-## Dodatkowe Zasoby
-
-- Dokumentacja Microsoft : Odwiedź przewodniki Microsoft dotyczące szczegółowych instrukcji na temat Power Automate, Planner, i To Do.
-- Szablony & Samouczki : Przeglądaj szablony w Power Automate do automatyzacji zarządzania zadaniami.
+## Pytania do doprecyzowania
+1. **Integracja z Teta.me i Tidaro**: Czy możemy sprawdzić, czy firma ma dostęp do API tych platform? Jeśli nie, jak często będą aktualizowane dane importowane ręcznie?
+2. **Import danych z Teams**: Jakie dokładnie dane personalne są dostępne w Teams i jak często będą aktualizowane?
+3. **Metki/hashtagi**: Czy masz już listę metek/hashtagów, które będą używane do oznaczania pracowników? Jakie są kryteria przypisywania tych metek?
+4. **Feedback**: Czy feedback ma być automatyczny (np. brak odhaczenia zadania) czy pracownicy mają ręcznie zgłaszać problemy?
