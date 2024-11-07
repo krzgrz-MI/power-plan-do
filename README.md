@@ -41,12 +41,12 @@
 4. **Feedback**: Czy feedback ma być automatyczny (np. brak odhaczenia zadania) czy pracownicy mają ręcznie zgłaszać problemy?
 
 
-#Prompts
+# Prompts
 
-##First one
+## First one
 Pomóż mi proszę zaprojektować aplikację w Power Apps która ma na celu usprawnienie pracy w dwóch zespołach w naszym biurze. Oba zespoły składają się z 22 osób plus team leader. Każdy z zespołów pracuje w trybie hybrydowym 1:1, czyli 50% czasu spędza w biurze domowym a drugą połowę u nas w biurze. W naszym biurze wszyscy pracują na open space i nie mają przypisanych biurek, lecz zmieni się to niedługo a aplikacją do rezerwacji miejsc przy biurkach jest Tidaro. Zarządzanie urlopami i wnioskowaniem pracą z domu jest platforma Teta.me a planowaniem zadań w efekcie końcowym miał by być dla każdego pracownika jego osobisty Microsoft To-Do. Aplkiacja powinna spełniać następujące funkcje: Podstawowe -  włatwy i przejrzysty sposób móc wszystkim członkom zespołu przydzielać predefiniowane zadania, które mają określony początek i koniec w ciągu dnia pracy (na przykład "zadzwoń do klienta między 8:00 a 10:00") takie zadania mogą wykonywać pojedyńcze osoby albo większe grupy niezależnie od siebie ale w tym samym czasie. Codziennie może być inny rozkład zadań i przypisanych do nich osób z zespołu. Jeżeli potrzebna jest w zadaniu współpraca nie można mieszać osób przebywających na home office z tymi w biurze. osoby będące na urlopie nie powinny być widoczne w zasobach możliwych do przydzielenia. Każde zadanie posiada zakres minimalnej oraz maksymalnej liczby osób, która może się nim zajmować w ciągu danego czasu. Nie można przydzielić za dużo lub za mało osób do zadania. Po ustaleniu planu na tydzień indywidualne listy zadań powinny być codziennie o 7 rano przydzielane w aplikacjach To-Do danych pracowników oraz po zakończeniu oczekiwać na odchaczenie. Zakończenie wszystkich zadań w To-Do po zakończeniu dnia pracy uznawane jest jako pozytyw i nie potrzebny jest feedback. Jeżeli jakieś zadane zostało pominięte Team Leader powinien otrzymać ogólną infromację zwrotną o wynikach całego zespołu po zakończeniu dnia. Zaproponuj proszę narzędzia oraz flow tego rodzaju aplikacji, jej interfejs oraz zadaj mi maksymalną ilość pytań aby doprecyzować możliwości wyjścia i wejścia danych z innych źródeł (Teta, Tidaro, Teams, Tabele Exela, CSV itd.)
 
-##Second one
+## Second one
 - Teta posiada API nie mam informacji jednak czy nasza firma wykupiła taki dostęp
 - Tidaro także nie mam informacji o tym czy API jest dostępne
 - Dane z tabel ograniczałyby się do "ręcznie" importowanych danych personalnych z Tety oraz Tidaro
